@@ -9,7 +9,7 @@ app.UseDeveloperExceptionPage();
 
 app.MapGet("/", async () => {
 
-    var connectionString = "Server=ndc-demo.database.windows.net;Database=mydatabase;Authentication=Active Directory Default;";
+    var connectionString = "Server=ndc-sql.database.windows.net;Database=mydatabase;Authentication=Active Directory Default;";
     
     await using var connection = new SqlConnection(connectionString);
     await connection.QueryAsync<int>("SELECT 1");
